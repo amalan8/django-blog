@@ -1,7 +1,11 @@
-
+import os
 from django.test import TestCase
 from django.contrib.auth.models import User
-from blogging.models import Post
+from blogging.models import  Post
+from blogging.models import Category
+
+
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 
 class PostTestCase(TestCase):
     fixtures = ["blogging_test_fixture.json",]
@@ -14,3 +18,12 @@ class PostTestCase(TestCase):
         p1= Post(title=expected)
         actual = str(p1)
         self.assertEquals(expected, actual)
+
+
+class CategoryTestCase(TestCase):
+
+    def test_string_category_representation(self):
+        expected = "A Category"
+        c1 = Category(name=expected)
+        actual = str(c1)
+        self.assertEqual(expected, actual)
