@@ -13,11 +13,11 @@ import os.path
 from pathlib import Path
 
 from os import path, environ
-# from sys import path as sys_path
+from sys import path as sys_path
 # from django import setup
-#
-# sys_path.append("C:\\Users\am\PycharmProjects\06-django-blog\06-django-blog-amalan8\mysite\mysite")
-# environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
+# #
+# # sys_path.append("C:\\Users\am\PycharmProjects\06-django-blog\06-django-blog-amalan8\mysite\mysite")
+# # environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_project.settings')
 # setup()
 
 
@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polling',
-    'blogging'
+    'blogging',
 ]
 
 MIDDLEWARE = [
