@@ -1,7 +1,12 @@
 import datetime
 import os
 import time
+
+import django
+import mysite
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+django.setup()
 from django.utils.timezone import utc
 from django.test import TestCase
 from django.contrib.auth.models import User
