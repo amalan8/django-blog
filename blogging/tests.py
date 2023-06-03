@@ -1,7 +1,12 @@
 import datetime
 import os
 import time
+
+import django
+import mysite
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+django.setup()
 from django.utils.timezone import utc
 from django.test import TestCase
 from django.contrib.auth.models import User
@@ -54,7 +59,7 @@ class FrontEndTestCase(TestCase):
     def test_list_only_published(self):
         resp = self.client.get('/')
         resp_text = resp.content.decode(resp.charset)
-        self.assertTrue("Recent Posts" in resp_text)
+        self.assertTrue("Cool Blog Posts" in resp_text)
         for count in range(1, 11):
             title = "Post %d Title" % count
             if count < 6:
