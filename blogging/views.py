@@ -7,14 +7,16 @@ from blogging.models import Post
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
+
 class BlogListView(ListView):
     model = Post
-    queryset = Post.objects.order_by('-published_date').exclude(published_date=None)
-    template_name = 'blogging/list.html'
+    queryset = Post.objects.order_by("-published_date").exclude(published_date=None)
+    template_name = "blogging/list.html"
+
 
 class BlogDetailView(DetailView):
     model = Post
-    template_name = 'blogging/detail.html'
+    template_name = "blogging/detail.html"
 
 
 def stub_view(request, *args, **kwargs):
